@@ -1,0 +1,122 @@
+/* Base styles for the home page */
+.home-page {
+    height: 100%;
+    padding: 20px;
+    background-color: #f7f7f7; /* Light grey background */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Section title styling */
+.section-title {
+    font-size: 28px;
+    color: #222;
+    font-weight: 600;
+    border-bottom: 3px solid #3498db; /* Blue accent for section titles */
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+/* Crypto section */
+.crypto-section {
+    background-color: #ffffff;
+    height: 100%; /* Make it take full height */
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* News section */
+.news-section {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Scrollbar customization */
+.crypto-section::-webkit-scrollbar,
+.news-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.crypto-section::-webkit-scrollbar-thumb,
+.news-section::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.crypto-section::-webkit-scrollbar-thumb:hover,
+.news-section::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.crypto-section::-webkit-scrollbar-track,
+.news-section::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+/* Layout adjustments */
+.crypto-section,
+.news-section {
+    min-height: 95%; /* Ensures minimum height */
+}
+
+/* Large screens: Apply scroll and 75% for crypto section and 25% for news section */
+@media (min-width: 992px) {
+    .crypto-section {
+        width: 75%;
+        height: 86vh; /* Fixed height for scroll */
+        overflow-y: auto; /* Enable vertical scrolling */
+    }
+
+    .news-section {
+        width: 25%;
+        height: 86vh; /* Fixed height for scroll */
+        overflow-y: auto; /* Enable vertical scrolling */
+    }
+
+    .home-page {
+        flex-direction: row; /* Row layout for large screens */
+    }
+}
+
+/* Medium screens: stack the sections vertically */
+@media (max-width: 992px) {
+    .home-page {
+        padding: 10px;
+        flex-direction: column; /* Stack sections vertically */
+    }
+
+    .crypto-section,
+    .news-section {
+        width: 100%; /* Take full width of the container */
+        height: auto; /* Adjust height to content */
+        margin-bottom: 20px; /* Add space between sections */
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+
+    /* Adjust the minimum height for crypto and news sections on small screens */
+    .crypto-section,
+    .news-section {
+        min-height: 20px; /* Set the minimum height to 20px on small screens */
+    }
+
+    .section-title {
+        font-size: 22px; /* Adjust title size for smaller screens */
+    }
+    
+    /* Ensure scroll for crypto section on mobile */
+    .crypto-section {
+        height: 70vh; /* Adjust height for mobile */
+        overflow-y: auto; /* Enable vertical scrolling */
+    }
+}

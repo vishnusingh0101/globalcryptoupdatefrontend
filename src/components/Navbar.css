@@ -1,0 +1,140 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark theme background */
+    margin: 0;
+    padding: 0;
+    color: #fff; /* White text for better contrast */
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #1f1f1f; /* Dark navbar */
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Navbar brand */
+.navbar-brand {
+    color: #ffcc00 !important;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+    color: #f39c12 !important;
+}
+
+/* Navbar links */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #dcdcdc;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #ffcc00;
+}
+
+/* Google login button */
+.google-login-btn {
+    display: flex;
+    align-items: center;
+    padding: 10px 24px;
+    background: linear-gradient(45deg, #4285f4, #34a853); /* Gradient for a sleek effect */
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.google-login-btn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(45deg, #34a853, #4285f4);
+}
+
+.google-login-btn:focus {
+    outline: none;
+}
+
+.google-login-btn .google-logo {
+    margin-right: 10px;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 1rem 1.5rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.6rem;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        gap: 1rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #1f1f1f;
+        padding: 1rem 0;
+        display: none;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .navbar-nav.active {
+        display: flex;
+    }
+
+    .navbar-nav .nav-item .nav-link {
+        font-size: 1.1rem;
+        padding: 0.75rem 1.5rem;
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+
+    .google-login-btn {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+}
+
+/* Mobile Menu Button */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #ffcc00;
+}
+
+@media (max-width: 992px) {
+    .menu-toggle {
+        display: block;
+    }
+}

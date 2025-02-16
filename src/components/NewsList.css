@@ -1,0 +1,203 @@
+/* General button styling */
+.refreshButton {
+  background: linear-gradient(45deg, #007bff, #0056b3); /* Subtle gradient for modern effect */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.refreshButton:hover {
+  background: linear-gradient(45deg, #0056b3, #003f7f);
+  transform: scale(1.07);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.refreshButton:disabled {
+  background: #b0b0b0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Overall container */
+.newsContainer {
+  width: 100%;
+  max-width: 1200px; /* Limit max width for better readability */
+  margin: auto;
+  height: auto;
+  overflow-y: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-bottom: 25px;
+  box-sizing: border-box;
+}
+
+/* List of news articles */
+.newsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Individual news item */
+.newsItem {
+  background: #f9f9f9;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.newsItem:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Image container */
+.newsImage {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #ddd;
+  position: relative;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+/* Image styling */
+.newsImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.newsImage:hover img {
+  transform: scale(1.08);
+}
+
+/* Placeholder for missing images */
+.newsImage.noImage {
+  background: #f1f1f1;
+  color: #888;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.newsImage.noImage::before {
+  content: "No Image Available";
+  text-align: center;
+}
+
+/* Title and description styling */
+.newsItem h3 {
+  font-size: 20px;
+  margin: 12px 18px;
+  color: #222;
+  font-weight: 700;
+}
+
+.newsItem p {
+  margin: 0 18px 12px;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Link styling */
+.newsLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.newsLink:hover h3 {
+  color: #007bff;
+}
+
+/* Loading, error, and empty states */
+.loadingMessage,
+.errorMessage,
+.emptyMessage {
+  text-align: center;
+  color: #444;
+  font-size: 17px;
+  margin-top: 20px;
+}
+
+/* Improved scrollbar */
+.newsContainer::-webkit-scrollbar {
+  width: 7px;
+}
+
+.newsContainer::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 4px;
+}
+
+.newsContainer::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+.newsContainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .newsContainer {
+    padding: 16px;
+  }
+
+  .newsImage {
+    height: 160px;
+  }
+
+  .newsItem h3 {
+    font-size: 18px;
+    margin: 10px 14px;
+  }
+
+  .newsItem p {
+    font-size: 14px;
+    margin: 0 14px 10px;
+  }
+
+  .newsItem:hover {
+    transform: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .refreshButton {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .newsImage {
+    height: 130px;
+  }
+
+  .newsItem h3 {
+    font-size: 16px;
+  }
+
+  .newsItem p {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,121 @@
+.crypto-table-container {
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.crypto-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  margin-bottom: 20px;
+  min-width: 600px;
+}
+
+.crypto-table thead th {
+  background-color: #ffffff;
+  padding: 12px;
+  border-bottom: 2px solid #ccc;
+}
+
+.crypto-table tbody tr {
+  border-bottom: 1px solid #ffffff;
+}
+
+.crypto-link {
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  align-items: center;
+}
+
+.crypto-logo {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.positive {
+  color: #28a745;
+}
+
+.negative {
+  color: #dc3545;
+}
+
+/* Card layout for smaller screens */
+.crypto-cards {
+  display: none; /* Hidden by default */
+}
+
+.crypto-card {
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  width: 160px;
+  flex-shrink: 0; /* Prevent cards from shrinking */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.crypto-card .crypto-logo {
+  width: 35px;
+  height: 35px;
+  margin-bottom: 8px;
+}
+
+.crypto-card .crypto-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.crypto-card .crypto-price {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.crypto-card .crypto-change {
+  font-size: 14px;
+}
+
+.crypto-card .crypto-market-cap,
+.crypto-card .crypto-volume,
+.crypto-card .crypto-supply {
+  font-size: 12px;
+  margin: 3px 0;
+  word-break: break-word;
+}
+
+@media (max-width: 1024px) {
+  .crypto-table {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .crypto-table-container {
+    overflow-x: auto;
+  }
+
+  .crypto-table {
+    display: none; /* Hide table layout */
+  }
+
+  .crypto-cards {
+    display: flex; /* Display the cards in a flex container */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 10px 0; /* Add padding for smoother scrolling */
+    gap: 10px; /* Spacing between cards */
+    scroll-snap-type: x mandatory; /* Smooth scroll snapping */
+    justify-content: flex-start;
+    white-space: nowrap;
+  }
+
+  .crypto-card {
+    scroll-snap-align: center; /* Align cards in the center while scrolling */
+  }
+}
